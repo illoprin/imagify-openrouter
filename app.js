@@ -1,6 +1,6 @@
 
 const API_URL = "https://openrouter.ai/api/v1/images";
-const STORAGE_KEY = "imagen-internal-tool-v1";
+const STORAGE_KEY = "imagify-internal-tool-v1";
 const HISTORY_LIMIT = 60;
 const ASPECTS = ["auto", "1:1", "2:3", "3:2", "4:3", "16:9", "9:16", "21:9"];
 const BACKGROUNDS = ["auto", "transparent", "opaque"];
@@ -386,7 +386,7 @@ async function generateOne(snapshot) {
       Authorization: `Bearer ${state.apiKey}`,
       "Content-Type": "application/json",
       "HTTP-Referer": window.location.origin,
-      "X-Title": "Imagen Internal Tool",
+      "X-Title": "Imagify Internal Tool",
     },
     body: JSON.stringify(body),
   });
