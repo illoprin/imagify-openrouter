@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Imagen Internal Tool</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <script src="app.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <aside id="panel">
+      <div class="panel-head"><i class="bi bi-stars"></i> Imagen</div>
+
+      <details open>
+        <summary>
+          <i class="bi bi-key"></i> Connection
+          <i class="bi bi-chevron-right chev"></i>
+        </summary>
+        <div class="section-body">
+          <div class="field">
+            <label for="apiKey">OpenRouter API key</label>
+            <div class="with-btn">
+              <input
+                id="apiKey"
+                class="input"
+                type="password"
+                placeholder="sk-or-..."
+                autocomplete="off"
+                spellcheck="false"
+              />
+              <button id="eye" title="Show key" aria-label="Show key">
+                <i class="bi bi-eye"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </details>
+
+      <details open>
+        <summary>
+          <i class="bi bi-cpu"></i> Model
+          <i class="bi bi-chevron-right chev"></i>
+        </summary>
+        <div class="section-body">
+          <div class="field">
+            <label for="model">Model</label>
+            <select id="model"></select>
+          </div>
+          <div class="field" id="streamBox">
+            <label class="toggle"
+              ><span>Stream response</span
+              ><input id="stream" type="checkbox" /><span class="sw"></span
+            ></label>
+          </div>
+        </div>
+      </details>
+
+      <details open>
+        <summary>
+          <i class="bi bi-aspect-ratio"></i> Format
+          <i class="bi bi-chevron-right chev"></i>
+        </summary>
+        <div class="section-body">
+          <div class="field">
+            <span class="lbl">Aspect ratio</span>
+            <div class="seg" id="aspectSeg"></div>
+          </div>
+          <div class="field" id="resolutionBox">
+            <span class="lbl">Resolution</span>
+            <div class="seg" id="resolutionSeg"></div>
+          </div>
+        </div>
+      </details>
+
+      <details open id="qualityDetails">
+        <summary>
+          <i class="bi bi-sliders"></i> Quality
+          <i class="bi bi-chevron-right chev"></i>
+        </summary>
+        <div class="section-body">
+          <div class="field" id="qualityBox">
+            <span class="lbl">Quality</span>
+            <div class="seg" id="qualitySeg"></div>
+          </div>
+          <div class="field" id="backgroundBox">
+            <span class="lbl">Background</span>
+            <div class="seg" id="backgroundSeg"></div>
+          </div>
+        </div>
+      </details>
+    </aside>
+
+    <div id="main">
+      <div class="topbar">
+        <button
+          class="icon-btn"
+          id="toggle"
+          title="Toggle settings"
+          aria-label="Toggle settings"
+        >
+          <i class="bi bi-layout-sidebar"></i>
+        </button>
+        <span class="info" id="info"></span>
+        <span class="spacer"></span>
+        <button
+          class="icon-btn"
+          id="clear"
+          title="Clear history"
+          aria-label="Clear history"
+        >
+          <i class="bi bi-trash3"></i>
+        </button>
+      </div>
+
+      <div id="gallery"><div class="grid" id="grid"></div></div>
+
+      <div class="bar-wrap">
+        <div class="bar" id="bar">
+          <div class="refs" id="refs"></div>
+          <textarea
+            id="prompt"
+            rows="1"
+            placeholder="Describe an image. Paste or drop references here."
+          ></textarea>
+          <div class="bar-row">
+            <button
+              class="icon-btn"
+              id="attach"
+              title="Attach references"
+              aria-label="Attach references"
+            >
+              <i class="bi bi-paperclip"></i>
+            </button>
+            <input id="file" type="file" accept="image/*" multiple hidden />
+            <div class="stepper" title="Number of images">
+              <button id="dec" aria-label="Fewer">
+                <i class="bi bi-dash-lg"></i>
+              </button>
+              <span id="countVal">1</span>
+              <button id="inc" aria-label="More">
+                <i class="bi bi-plus-lg"></i>
+              </button>
+            </div>
+            <span class="spacer"></span>
+            <span class="kbd">Ctrl + Enter</span>
+            <button class="send" id="go">
+              <i class="bi bi-arrow-up"></i> Generate
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="viewer"><img alt="" /></div>
+  </body>
+</html>
