@@ -1,10 +1,10 @@
 # Imagify OpenRouter
 
-A minimal, single-file client for generating images via [OpenRouter](https://openrouter.ai).
+A lightweight TypeScript client for generating images via [OpenRouter](https://openrouter.ai), bundled with Vite.
 
 ![Screenshot](./img/img.webp)
 
-I built it because I couldn't find a decent client. They either require Docker or are overloaded with features I don't need. This one is one HTML file: no build step, no backend, no install.
+The app runs entirely in your browser; requests go directly to OpenRouter. Vite is used for local development and production builds.
 
 
 **Live:** https://illoprin.github.io/imagify-openrouter/
@@ -15,20 +15,27 @@ I built it because I couldn't find a decent client. They either require Docker o
 - Per-model settings: aspect ratio, quality, background, resolution, streaming
 - Reference images: attach, drag-drop or paste
 - Batch generation: up to 8 images in parallel
-- History, settings and API key persist in `localStorage`
+- Settings and image history persist in IndexedDB
+- API key persists in browser localStorage
+
 
 ## Usage
 
-1. Open the live page, or download `index.html` and run http server from root directory
+1. Install dependencies and start Vite:
 ```bash
-npx http-server . -p 8080
+npm install
+npm run dev
 ```
-2. Paste your OpenRouter API key in the side panel.
+2. Enter your OpenRouter API key. It is saved automatically in this browser and remains available after reloads.
+
 3. Type a prompt and press **Generate** (or `Ctrl + Enter`).
+
+Run `npm run build` to create a production build in `dist/`.
 
 ## Privacy
 
-Everything runs in your browser. Requests go directly to OpenRouter. Your API key is stored in `localStorage` on your device only.
+App settings, references and generated image history are stored in IndexedDB. The API key is stored unencrypted in localStorage so it persists across reloads. Anyone with access to this browser profile, or scripts running on this page, can access it. Use this only on a trusted device and do not enter your key on an untrusted site.
+
 
 ## Plans
 

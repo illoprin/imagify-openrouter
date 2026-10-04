@@ -1,1 +1,4 @@
 .sketches
+.backup
+node_modules/
+dist/

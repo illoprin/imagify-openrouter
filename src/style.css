@@ -130,9 +130,11 @@ select {
   padding: 11px 14px;
   outline: none;
   appearance: none;
+  cursor: pointer;
 }
 .input:focus,
 select:focus {
+  cursor: pointer;
   border-color: var(--dim);
 }
 select {
@@ -351,6 +353,12 @@ option {
   color: var(--muted);
   font-size: 12px;
 }
+.caption .cost {
+  display: block;
+  margin-top: 3px;
+  color: var(--dim);
+  font-size: 11px;
+}
 .state {
   text-align: center;
   color: var(--muted);
@@ -431,6 +439,7 @@ option {
   object-fit: cover;
   border-radius: 7px;
   display: block;
+  cursor: zoom-in;
 }
 .ref button {
   position: absolute;
@@ -531,10 +540,16 @@ option {
   :root {
     --panel-w: 280px;
   }
+  .topbar {
+    z-index: 10;
+    border-bottom: 1px solid var(--line2);
+    background: var(--panel);
+  }
   #panel {
     position: fixed;
     z-index: 5;
     height: 100vh;
+    margin-top: 3.5rem;
   }
   body.collapsed #panel {
     margin-left: calc(var(--panel-w) * -1);
