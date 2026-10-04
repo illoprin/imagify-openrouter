@@ -2,12 +2,15 @@
 
 A lightweight TypeScript client for generating images via [OpenRouter](https://openrouter.ai), bundled with Vite.
 
-![Screenshot](./img/img.webp)
+<img align="center" src="./img/img.webp" 
+alt="Screenshot" />
 
 The app runs entirely in your browser; requests go directly to OpenRouter. Vite is used for local development and production builds.
 
-
 **Live:** https://illoprin.github.io/imagify-openrouter/
+
+<img align="center" src="./img/vid.gif" alt="Video" />
+
 
 ## Features
 
