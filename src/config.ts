@@ -1,6 +1,22 @@
 export const API = "https://openrouter.ai/api/v1/images";
 export const DB = "imagify-v1";
-export const Aspects = ["auto", "1:1", "2:3", "3:2", "4:3", "16:9", "9:16", "21:9"];
+export const Aspects = [
+  "auto",
+  "1:1",
+  "1:4",
+  "1:8",
+  "2:3",
+  "3:2",
+  "3:4",
+  "4:1",
+  "4:3",
+  "4:5",
+  "5:4",
+  "8:1",
+  "9:16",
+  "16:9",
+  "21:9",
+];
 export const Qualities = ["auto", "low", "medium", "high"];
 
 export const Models = {
@@ -18,8 +34,8 @@ export const Models = {
     resolution: false,
     stream: true,
   },
-  "google/gemini-3.1-flash-image": {
-    label: "Nano Banana 2 (Gemini 3.1 Flash Image)",
+  "google/gemini-nano-banana-2.1": {
+    label: "Nano Banana 2.1",
     quality: null,
     background: false,
     resolution: true,
